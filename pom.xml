@@ -8,17 +8,21 @@
 	<name>jaxws-cxf-quickstart Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	
+	<properties>
+		<cxf.version>3.1.6</cxf.version>
+	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-transports-http</artifactId>
-			<version>3.1.6</version>
+			<version>${cxf.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-frontend-jaxws</artifactId>
-			<version>3.1.6</version>
+			<version>${cxf.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -56,6 +60,28 @@
 				<configuration>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-codegen-plugin</artifactId>
+				<version>${cxf.version}</version>
+				<executions>
+					<execution>
+						<id>generate-sources</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<sourceRoot>${basedir}/src/generated</sourceRoot>
+							<wsdlOptions>
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/webapp/WEB-INF/wsdl/CustomerOrders.wsdl</wsdl>
+								</wsdlOption>
+							</wsdlOptions>
+						</configuration>
+						<goals>
+							<goal>wsdl2java</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 		<finalName>jaxws-cxf-quickstart</finalName>

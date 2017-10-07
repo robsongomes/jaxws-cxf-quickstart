@@ -3,5 +3,21 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+	<display-name>Archetype Created Web Application</display-name>
+<!-- 	
+	<servlet>
+		<servlet-name>cxf</servlet-name>
+		<display-name>cxf</display-name>
+		<description>Apache CXF Endpoint</description>
+		<servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>cxf</servlet-name>
+		<url-pattern>/services/*</url-pattern>
+	</servlet-mapping>
+	<session-config>
+		<session-timeout>60</session-timeout>
+	</session-config> 
+-->
 </web-app>

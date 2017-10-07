@@ -1,4 +1,4 @@
-package br.com.robsonaraujo.jaxws;
+package br.com.robsonaraujo.service;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;

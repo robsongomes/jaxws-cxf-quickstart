@@ -1,5 +1,6 @@
 <html>
 <body>
-<h2>Hello World!</h2>
+<h2>Welcome to Customer Orders Services</h2>
+<a href="services">Services Available</a>
 </body>
 </html>
